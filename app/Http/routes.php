@@ -27,4 +27,9 @@ Route::get('/admin/adminLogin',function (){
 
 Route::get('/admin/adminSignup',function () {
     return view('admin.adminLogin.signup');
+
+
+Route::resource('admin/adminSignup','AdminSignUpController');
+
 });
+
