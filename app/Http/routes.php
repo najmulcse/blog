@@ -20,16 +20,19 @@ Route::get('/admin',function (){
     return view('admin.index');
 });
 
-Route::get('/admin/adminLogin',function (){
-   return view('admin.adminLogin.index');
-});
+//Route::get('/admin/adminLogin',function (){
+//   return view('admin.adminLogin.index');
+//});
+//
+//
+//Route::get('/admin/adminSignup',function () {
+//    return view('admin.adminLogin.signup');
+//
+//
+//
+//
+//});
 
 
-Route::get('/admin/adminSignup',function () {
-    return view('admin.adminLogin.signup');
-
-
-Route::resource('admin/adminSignup','AdminSignUpController');
-
-});
-
+Route::resource('users','AdminUserController');
+Route::resource('admin/adminLogin','AdminSignUpController');

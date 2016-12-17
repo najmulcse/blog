@@ -14,11 +14,27 @@ class AdminSignUpController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+
+
+
+    public function blank(){
+
+        echo "najmul";
+        return view('admin.adminLogin.blank');
     }
 
+
+
+    public function index()
+    {
+
+        return view('admin.adminLogin.login');
+    }
+//    public function login()
+//    {
+//        //
+//        return view('admin.adminLogin.login');
+//    }
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +43,12 @@ class AdminSignUpController extends Controller
     public function create()
     {
         //
+       return view('admin.adminLogin.signup');
+
     }
+//    public function signup(){
+//        return view('admin.adminLogin.signup');
+//    }
 
     /**
      * Store a newly created resource in storage.
@@ -38,9 +59,23 @@ class AdminSignUpController extends Controller
     public function store(Request $request)
     {
         //
+
         $input=$request->all();
-        Admin::create($input);
-       // redirect('admin/adminLogin/blank');
+        $password=$request->password;
+        $con_password=$request->confirmed_password;
+        if($password==$con_password)
+        {
+            $password=bcrypt($password);
+            $input['password']=$password;
+            Admin::create($input);
+            return redirect('admin/');
+        }
+        else{
+            echo "password miss match";
+        }
+
+       //redirect('admin/');
+        //return view('admin');
     }
 
     /**
@@ -63,6 +98,28 @@ class AdminSignUpController extends Controller
     public function edit($id)
     {
         //
+
+        $email=$request->email;
+        $password=$request->password;
+
+
+        $input_db=Admin::all();
+        $email_db=$input_db['email'];
+        $password_db=$input_db['password'];
+        if($email_db==email){
+
+            if($password==$password_db){
+                return redirect('admin/');
+            }
+            else{
+                echo "Your password is not correct";
+            }
+
+        }
+        else{
+            echo "Email doesn't exists";
+        }
+       // return view('admin.adminLogin.blank');
     }
 
     /**
