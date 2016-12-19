@@ -34,5 +34,8 @@ Route::get('/admin',function (){
 //});
 
 
-Route::resource('users','AdminUserController');
+Route::resource('admin/','AdminLoginController');
 Route::resource('admin/adminLogin','AdminSignUpController');
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
