@@ -20,6 +20,7 @@ Route::get('/admin',function (){
     return view('admin.index');
 });
 
+
 //Route::get('/admin/adminLogin',function (){
 //   return view('admin.adminLogin.index');
 //});
@@ -34,8 +35,16 @@ Route::get('/admin',function (){
 //});
 
 
-Route::resource('admin/','AdminLoginController');
+//Route::resource('admin/','AdminLoginController');
 Route::resource('admin/adminLogin','AdminSignUpController');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/blog','BlogController@blog');
+Route::get('/aboutus','BlogController@about');
+Route::get('/portfolio','BlogController@portfolio');
+Route::get('/contact','BlogController@contact');
+
+Route::get('/service','BlogController@service');
+Route::get('/pages','BlogController@pages');
