@@ -29,4 +29,23 @@ class BlogController extends Controller
     public function pages(){
         return view('service.mypage');
     }
+
+
+    public function bloghome(){
+        return view('blog.bloghome');
+    }
+
+    public function blogabout(){
+        return view('blog.blogabout');
+    }
+
+    public function bloglogin(){
+        return view('blog.bloglogin');
+    }
+
+    public function blogregister(){
+        return view('blog.blogregister');
+    }
+
+
 }

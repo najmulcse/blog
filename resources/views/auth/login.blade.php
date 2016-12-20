@@ -1,6 +1,25 @@
-@extends('layouts.app')
 
-@section('content')
+<html >
+
+<head>
+    <title>Login </title>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}} " >
+
+    <!-- MetisMenu CSS -->
+    <link rel="stylesheet" href="{{ asset('css/sb-admin-2.css')}} " >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/sb-admin-2.min.css')}} " >
+    <!-- Morris Charts CSS -->
+    <link href="{{ asset('css/morris.css')}} " rel="stylesheet">
+
+    <!-- Custom Fonts -->
+
+    <link href="{{ asset('css/font-awesome.css')}} " rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/font-awesome.min.css')}} " rel="stylesheet" type="text/css">
+</head>
+
+<body>
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -63,4 +82,5 @@
         </div>
     </div>
 </div>
-@endsection
+</body>
+</html>

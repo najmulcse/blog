@@ -48,3 +48,7 @@ Route::get('/contact','BlogController@contact');
 
 Route::get('/service','BlogController@service');
 Route::get('/pages','BlogController@pages');
+Route::get('/bloghome','BlogController@bloghome');
+Route::get('/bloglogin','BlogController@bloglogin');
+Route::get('/blogabout','BlogController@blogabout');
+Route::get('/blogregister','BlogController@blogregister');
