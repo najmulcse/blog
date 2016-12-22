@@ -12,7 +12,7 @@
 
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
-                <li class=""><a href="{{url('bloghome/')}}">Home</a></li>
+                <li class=""><a href="{{url('/')}}">Home</a></li>
                 <li><a href="{{ url('blogabout/')}}">About Blog</a></li>
                 @if (Auth::guest())
                     <li><a href="{{ url('login/') }}">Login</a></li>
@@ -24,12 +24,13 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/admin') }}"><i class="fa fa-btn fa-sign-out"></i>Profile</a></li>
                             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                         </ul>
                     </li>
                 @endif
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <i class="fa fa-angle-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Blog Single</a></li>
                         <li><a href="#">Pricing</a></li>
