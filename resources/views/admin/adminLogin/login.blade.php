@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="col-sm-2"></div>
                             <div class="col-sm-8">
-                                {{ Form::open(array('action'=>'AdminLoginController@store')) }}
+                                {{ Form::open(array('action'=>'AdminUserController@login')) }}
 
                                     <div class="form-group awesome ">
                                         {{Form::label('email','Email')}}

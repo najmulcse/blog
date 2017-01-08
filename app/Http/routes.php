@@ -35,7 +35,17 @@ Route::get('/admin',function (){
 //});
 
 
-//Route::resource('admin/','AdminLoginController');
+
+Route::get('usersprofile/','UsersProfileController@index');
+Route::get('usersprofileB/','UsersProfileController@blogPost');
+
+
+Route::get('register/','AdminUserController@signup');
+Route::get('login/','AdminUserController@login');
+
+
+
+
 Route::resource('admin/adminLogin','AdminSignUpController');
 Route::auth();
 

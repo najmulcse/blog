@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Admin </title>
+    <title>Signup</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css')}} " >
@@ -103,6 +103,23 @@
                             </div>
                         </div>
 
+                        <div class="form-group {{ $errors->has('role_id') ? ' has-error' : '' }}">
+                            <label for="password-confirm" class="col-md-4 control-label">Signup As</label>
+                           <div class="col-md-6 ">
+                            <label class="radio-inline  control-label">
+                                <input type="radio" name="role_id" value="1">Admin
+                            </label>
+                            <label class="radio-inline  control-label">
+                                <input type="radio" name="role_id" value="2" checked >Subscriber
+                            </label>
+                               @if ($errors->has('role_id'))
+                                   <span class="help-block">
+                                        <strong>{{ $errors->first('role_id') }}</strong>
+                                    </span>
+                               @endif
+                            </div>
+
+                        </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
