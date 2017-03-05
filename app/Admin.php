@@ -15,7 +15,11 @@ class Admin extends Model
 
     public function admin()
     {
-        return $this->hasMany('App\Admin');
+        return $this->belongsTo('App\Admin');
     }
+    public function login(){
+
+    }
+
 }
 

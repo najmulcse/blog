@@ -43,3 +43,14 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.userimage{
+
+  border-radius:50%;
+
+}
+.cover_pic{
+  background-image:url('../images/client2.png');
+
+
+}

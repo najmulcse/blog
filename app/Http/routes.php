@@ -20,6 +20,7 @@ Route::get('/admin',function (){
     return view('admin.index');
 });
 
+
 //Route::get('/admin/adminLogin',function (){
 //   return view('admin.adminLogin.index');
 //});
@@ -34,5 +35,30 @@ Route::get('/admin',function (){
 //});
 
 
-Route::resource('users','AdminUserController');
+
+Route::get('usersprofile/','UsersProfileController@index');
+Route::get('usersprofileB/','UsersProfileController@blogPost');
+
+
+Route::get('register/','AdminUserController@signup');
+Route::get('login/','AdminUserController@login');
+
+
+
+
 Route::resource('admin/adminLogin','AdminSignUpController');
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+Route::get('/blog','BlogController@blog');
+Route::get('/aboutus','BlogController@about');
+Route::get('/portfolio','BlogController@portfolio');
+Route::get('/contact','BlogController@contact');
+
+Route::get('/service','BlogController@service');
+Route::get('/pages','BlogController@pages');
+Route::get('/bloghome','BlogController@bloghome');
+Route::get('/bloglogin','BlogController@bloglogin');
+Route::get('/blogabout','BlogController@blogabout');
+Route::get('/blogregister','BlogController@blogregister');

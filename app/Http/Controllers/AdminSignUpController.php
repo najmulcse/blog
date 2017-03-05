@@ -95,7 +95,7 @@ class AdminSignUpController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
         //
 
@@ -106,7 +106,7 @@ class AdminSignUpController extends Controller
         $input_db=Admin::all();
         $email_db=$input_db['email'];
         $password_db=$input_db['password'];
-        if($email_db==email){
+        if($email_db==$email){
 
             if($password==$password_db){
                 return redirect('admin/');
